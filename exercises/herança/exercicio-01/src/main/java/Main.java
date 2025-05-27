@@ -1,22 +1,65 @@
+/**
+ * Classe MAIN (PRINCIPAL) que executa o programa.
+ * Exibe um menu para o usuário escolher entre Automovél, Barco ou Avião,
+ * e permite interagir com os objetos dessas classes.
+ * 
+ * @author Thiago Mendes de Almeida
+ */
 import java.util.Scanner;
 
 public class Main {
     
+    /**
+     * Método principal que executa o programa.
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
 
+        
         @SuppressWarnings("resource")
+        /**
+         * Scanner para ler a entrada do usuário.
+         */
         Scanner in = new Scanner (System.in);
 
+        /**
+         * Objetos das classes Automovél, Avião e Barco,
+         * que serão utilizados para interagir com o usuário.
+         */
         Automovél automovél = new Automovél("27645898723", "SFG7823");
+
+        /**
+         * Objeto da classe Barco, que representa um avião com um registro específico.
+         */
         Avião avião = new Avião("3439845");
+
+        /**
+         * Objeto da classe Barco, que representa um barco com um registro específico.
+         */
         Barco barco = new Barco("2345678");
 
+        /**
+         * Variáveis de controle para o menu principal e submenus.
+         * cont: controla o menu principal,
+         * aut: controla o submenu do automovél,
+         * b: controla o submenu do barco,
+         * av: controla o submenu do avião.
+         */
         int cont = 0;
         int aut = 0;
         int b = 0;
         int av = 0;
 
+
+        /**
+         * Loop principal que exibe o menu e permite ao usuário escolher uma opção.
+         * O loop continua até que o usuário escolha a opção de sair (4).
+         */
         while (cont != 4) {
+            /**
+             * Exibe o menu principal com opções para Automovél, Barco, Avião ou Sair.
+             */
             System.out.println("\n+-----------------------------+");
             System.out.println("|            MENU             |");
             System.out.println("+-----------------------------+");
@@ -25,12 +68,26 @@ public class Main {
             System.out.println("3 - Aviao");
             System.out.println("4 - Sair");
             System.out.println("+-----------------------------+\n");
+
+            /**
+             * Lê a opção escolhida pelo usuário.
+             */
             cont = in.nextInt();
 
+            /**
+             * Switch case para controlar o rumo do programa
+             * com base na opção escolhida pelo usuário.
+             */
             switch (cont) {
-
+                
+                /**
+                 * Caso 1: Automovél
+                 */
                 case 1:
-
+                    /**
+                     * Loop para o submenu do automovél,
+                     * que continua até que o usuário escolha a opção de sair (8).
+                     */
                     while (aut != 8) {
                         
                         System.out.println("\n+-----------------------------+");
@@ -50,6 +107,11 @@ public class Main {
                         System.out.println("+-----------------------------+\n");
                         aut = in.nextInt();
 
+                        /**
+                         * Switch case para controlar as ações do automovél
+                         * com base na opção escolhida pelo usuário.
+                         * Cada case corresponde a uma ação específica, como ligar, mover, parar, passar marcha, frear e desligar.
+                         */
                         switch (aut) {
                             case 1:
                                 automovél.ligar();
@@ -80,9 +142,17 @@ public class Main {
                     }
                     aut = 0;
                     break;
+                
 
+                /**
+                 * Caso 2: Barco
+                 */
                 case 2:
 
+                /**
+                 * Loop para o submenu do barco,
+                 * que continua até que o usuário escolha a opção de sair (9).
+                 */
                 while (b != 9) {
                         
                     System.out.println("\n+-----------------------------+");
@@ -102,6 +172,11 @@ public class Main {
                     System.out.println("+-----------------------------+\n");
                     b = in.nextInt();
 
+                    /**
+                     * Switch case para controlar as ações do barco
+                     * com base na opção escolhida pelo usuário.
+                     * Cada case corresponde a uma ação específica, como ligar, mover, parar, navegar, ancorar, desancorar e desligar.
+                     */
                     switch (b) {
                         case 1:
                             barco.ligar();
@@ -136,8 +211,15 @@ public class Main {
                 b = 0;
                 break;
 
+                /*
+                 * Caso 3: Avião
+                 */
                 case 3:
 
+                /**
+                 * Loop para o submenu do avião,
+                 * que continua até que o usuário escolha a opção de sair (8).
+                 */
                 while (av != 8) {
                         
                     System.out.println("\n+-------------------------------+");
@@ -156,6 +238,11 @@ public class Main {
                     System.out.println("+-----------------------------+\n");
                     av = in.nextInt();
 
+                    /**
+                     * Switch case para controlar as ações do avião
+                     * com base na opção escolhida pelo usuário.
+                     * Cada case corresponde a uma ação específica, como ligar, mover, parar, decolar, pousar e desligar.
+                     */
                     switch (av) {
                         case 1:
                             avião.ligar();
@@ -187,10 +274,15 @@ public class Main {
                 av = 0;
                 break;
 
+                /**
+                 * Caso 4: Sair
+                 */
                 case 4:
                     System.out.println("Saindo do programa...");
                     break;
-
+                /*
+                 * Caso insira um valor que não está listado, aparece: Número inválido
+                 */
                 default: 
                     System.out.println("Número inválido!");
             }

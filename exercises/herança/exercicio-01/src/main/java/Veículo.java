@@ -1,9 +1,23 @@
+/**
+ * Classe veículo que representa um veículo genérico.
+ * Contém métodos para ligar, desligar, mover para frente, mover de ré e parar (TODOS OS TIPOS DE VEÍCULOS CONTÉM).
+ * 
+ * @author Thiago Mendes de Almeida
+ */
 public class Veículo {
 
+    /**
+     * Atributos que armazenam o estado do veículo (ligado/desligado)
+     * e se está se movendo para frente ou de ré.
+     */
     private boolean on;
     private boolean frente;
     private boolean re;
 
+    /**
+     * Construtor padrão para criar um veículo sem informações.
+     * Inicializa os atributos com valores padrão.
+     */
     public void ligar(){
 
         if (on == false){
@@ -15,6 +29,11 @@ public class Veículo {
         }
     }
 
+    /**
+     * Método para desligar o veículo.
+     * Verifica se o veículo já está desligado antes de desligar novamente.
+     * Se o veículo já estiver desligado, informa que não é possível desligar novamente.
+     */
     public void desligar(){
 
         if (on == true){
@@ -26,6 +45,12 @@ public class Veículo {
         }
     }
 
+    /**
+     * Método para mover o veículo para frente.
+     * Verifica se o veículo está ligado antes de mover.
+     * Se já estiver se movendo para frente, informa que não é possível mover novamente.
+     * Se o veículo estiver desligado, informa que não é possível se locomover.
+     */
     public void mover_frente(){
 
         if (on == true) {
@@ -44,6 +69,12 @@ public class Veículo {
         
     }
 
+    /**
+     * Método para mover o veículo de ré.
+     * Verifica se o veículo está ligado antes de mover.
+     * Se já estiver se movendo de ré, informa que não é possível mover novamente.
+     * Se o veículo estiver desligado, informa que não é possível se locomover de ré.
+     */
     public void mover_re(){
 
         if (on == true) {
@@ -63,6 +94,12 @@ public class Veículo {
         
     }
 
+    /**
+     * Método para parar o veículo.
+     * Verifica se o veículo está ligado antes de parar.
+     * Se já estiver parado, informa que não é possível parar novamente.
+     * Se o veículo estiver desligado, informa que não é possível parar.
+     */
     public void parar(){
 
         if (on == true) {
@@ -80,26 +117,56 @@ public class Veículo {
         }
     }
 
+    /**
+     * Método para verificar se o veículo está ligado.
+     * TRUE para ligado, FALSE para desligado.
+     */
     public boolean isOn() {
         return on;
     }
 
+    /**
+     * Método para definir o estado do veículo (ligado/desligado).
+     * TRUE para ligado, FALSE para desligado.
+     * 
+     * @param on
+     */
     public void setOn(boolean on) {
         this.on = on;
     }
 
+    /**
+     * Método que VERIFICA se o veículo está se movendo para frente.
+     * TRUE para se movendo para frente, FALSE caso contrário.
+     */
     public boolean isFrente() {
         return frente;
     }
 
+    /**
+     * Método que DEFINE se o veículo está se movendo para frente.
+     * TRUE para se movendo para frente, FALSE caso contrário.
+     * 
+     * @param frente
+     */
     public void setFrente(boolean frente) {
         this.frente = frente;
     }
 
+    /**
+     * Método que VERIFICA se o veículo está se movendo de ré.
+     * TRUE para se movendo de ré, FALSE caso contrário.
+     */
     public boolean isRe() {
         return re;
     }
 
+    /**
+     * Método que DEFINE se o veículo está se movendo de ré.
+     * TRUE para se movendo de ré, FALSE caso contrário.
+     * 
+     * @param re
+     */
     public void setRe(boolean re) {
         this.re = re;
     }
