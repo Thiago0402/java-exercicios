@@ -84,7 +84,7 @@ public class Pedido {
     }
 
     public void encerrar(String cnpjRestaurante) {
-        System.out.println("\nEncerrando o Pedido");
+        System.out.println("\nEncerrando o Pedido...");
 
         NotaFiscal novaNotaFiscal = new NotaFiscal();
         novaNotaFiscal.setId(UUID.randomUUID());
@@ -98,3 +98,4 @@ public class Pedido {
         novaNotaFiscal.gerarNota();
     }
 }
+
